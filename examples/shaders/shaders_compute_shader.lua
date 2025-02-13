@@ -43,8 +43,8 @@ local golRenderShader = rl.LoadShader(nil, "resources/glsl430/gol_render.glsl")
 local resUniformLoc = rl.GetShaderLocation(golRenderShader, "resolution")
 
 local golTransfertCode = rl.LoadFileText("resources/glsl430/gol_transfert.glsl");
-local golTransfertShader = rl.rlCompileShader(golTransfertCode, rl.RL_COMPUTE_SHADER);
-local golTransfertProgram = rl.rlLoadComputeShaderProgram(golTransfertShader);
+local golTransfertShader = rl.CompileShader(golTransfertCode, rl.RL_COMPUTE_SHADER);
+local golTransfertProgram = rl.LoadComputeShaderProgram(golTransfertShader);
 rl.UnloadFileText(golTransfertCode);
 
 local ssboSize = ffi.sizeof("int[?]", GOL_WIDTH * GOL_WIDTH)
